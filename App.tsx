@@ -17,10 +17,10 @@ const Category = () => {
 export default function App() {
   const router = createMemoryRouter(
     createRoutesFromElements(
-      <Route path="/:lang?/category" element={<Category />} />
+      <Route path="/:lang/category" element={<Category />} />
     ),
     {
-      initialEntries: ['/category'],
+      initialEntries: ['/ko/category'],
     }
   );
 
