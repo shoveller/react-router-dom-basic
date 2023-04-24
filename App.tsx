@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  createBrowserRouter,
+  createMemoryRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -15,10 +15,13 @@ const Category = () => {
 };
 
 export default function App() {
-  const router = createBrowserRouter(
+  const router = createMemoryRouter(
     createRoutesFromElements(
       <Route path="/:lang/category" element={<Category />} />
-    )
+    ),
+    {
+      initialEntries: ['/en/category'],
+    }
   );
 
   return <RouterProvider router={router} />;
